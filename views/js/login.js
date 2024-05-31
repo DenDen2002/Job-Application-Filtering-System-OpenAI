@@ -74,9 +74,9 @@ const login = async (email, password, role) => {
     try {
         let url;
         if (role === 'hr') {
-            url = 'http://localhost:4001/api/v1/hrs/login';
+            url = 'https://job-application-filtering-system-openai.onrender.com/api/v1/hrs/login';
         } else {
-            url = 'http://localhost:4001/api/v1/users/login';
+            url = 'https://job-application-filtering-system-openai.onrender.com/api/v1/users/login';
         }
 
         const response = await axios({

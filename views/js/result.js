@@ -2,7 +2,7 @@ const logout = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: 'http://localhost:4001/api/v1/users/logout',
+            url: 'https://job-application-filtering-system-openai.onrender.com/api/v1/users/logout',
         })
         if (res.data.status === 'success') {
             window.location.href = "/"
@@ -43,7 +43,7 @@ if (obj._id) {
 
 const userApllication = async () => {
     try {
-        const res = await axios.get('http://localhost:4001/api/v1/apply');
+        const res = await axios.get('https://job-application-filtering-system-openai.onrender.com/api/v1/apply');
         console.log(res.data.data)
         // displayApplications(res.data.data);
     } catch (err) {
@@ -88,7 +88,7 @@ const displayData = (apply) => {
             try {
                 const applyId = apply[i]._id
                 // Fetch and display the parsed data when the "Detail" button is clicked
-                const res = await axios.get(`http://localhost:4001/api/v1/apply/${applyId}`);
+                const res = await axios.get(`https://job-application-filtering-system-openai.onrender.com/api/v1/apply/${applyId}`);
                 const parsedData = JSON.parse(res.data.data.parsedData);
 
                 displayParsedData(parsedData);
@@ -130,7 +130,7 @@ const fetchAndDisplayApplications = async () => {
         const urlParams = new URLSearchParams(queryString);
         const jobId = urlParams.get('id');
 
-        const res = await axios.get('http://localhost:4001/api/v1/apply');
+        const res = await axios.get('https://job-application-filtering-system-openai.onrender.com/api/v1/apply');
         const jobApp = res.data.data;
         const result = [];
 

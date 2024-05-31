@@ -2,7 +2,7 @@ const logout = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: 'http://localhost:4001/api/v1/users/logout',
+            url: 'https://job-application-filtering-system-openai.onrender.com/api/v1/users/logout',
         })
         if (res.data.status === 'success') {
             window.location.href = "/"
@@ -40,7 +40,7 @@ if (obj._id) {
 
 const fetchJobs = async () => {
     try {
-        const res = await axios.get('http://localhost:4001/api/v1/jobs');
+        const res = await axios.get('https://job-application-filtering-system-openai.onrender.com/api/v1/jobs');
         console.log(res.data.data)
         displayJobs(res.data.data);
     } catch (err) {
@@ -57,10 +57,10 @@ const displayJobs = (jobs) => {
         jobListItem.classList.add('joblist');
         jobListItem.addEventListener('click', () => {
             if (obj.role == 'hr') {
-                window.location.href = `http://localhost:4001/detail.html?id=${job._id}`;
+                window.location.href = `https://job-application-filtering-system-openai.onrender.com/detail.html?id=${job._id}`;
 
             } else {
-                window.location.href = `http://localhost:4001/userDetail.html?id=${job._id}`;
+                window.location.href = `https://job-application-filtering-system-openai.onrender.com/userDetail.html?id=${job._id}`;
 
             }
             // Redirect to the job detail page passing the job ID as a query parameter

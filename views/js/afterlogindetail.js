@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const res = await axios({
                     method: 'GET',
-                    url: 'http://localhost:4001/api/v1/users/logout',
+                    url: 'https://job-application-filtering-system-openai.onrender.com/api/v1/users/logout',
                 })
                 if (res.data.status === 'success') {
                     window.location.href = '/'
@@ -67,7 +67,7 @@ function getFullName() {
 }
 const fetchJobDetails = async (jobId) => {
     try {
-        const res = await axios.get(`http://localhost:4001/api/v1/jobs/${jobId}`);
+        const res = await axios.get(`https://job-application-filtering-system-openai.onrender.com/api/v1/jobs/${jobId}`);
         displayJobDetails(res.data.data);
         console.log(res.data.data)
     } catch (err) {
