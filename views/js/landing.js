@@ -70,10 +70,10 @@ const displayJobs = (jobs) => {
         jobListItem.classList.add('joblist');
         jobListItem.addEventListener('click', () => {
             if (obj.role == 'hr') {
-                window.location.href = `https://job-application-filtering-system-openai.onrender.com/detail.html?id=${job._id}`;
+                window.location.href = `https://job-application-filtering-system-openai.onrender.com/detail?id=${job._id}`;
 
             } else {
-                window.location.href = `https://job-application-filtering-system-openai.onrender.com/userDetail.html?id=${job._id}`;
+                window.location.href = `https://job-application-filtering-system-openai.onrender.com/userDetail?id=${job._id}`;
 
             }
 

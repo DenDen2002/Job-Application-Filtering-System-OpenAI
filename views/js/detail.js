@@ -103,7 +103,7 @@ const displayJobDetails = (job) => {
     const result = document.getElementById('result-btn');
     result.addEventListener('click', async () => {
         try {
-            window.location.href = `https://job-application-filtering-system-openai.onrender.com/result.html?id=${job._id}`;
+            window.location.href = `https://job-application-filtering-system-openai.onrender.com/result?id=${job._id}`;
         } catch (err) {
             console.log(err);
         }
