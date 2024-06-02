@@ -55,12 +55,13 @@ if (obj._id) {
 }
 export const newhr = async (fullName, email, password, department) => {
     try {
+        console.log("jdha")
         const res = await axios({
             method: 'POST',
             url: 'https://job-application-filtering-system-openai.onrender.com/api/v1/hrs/create',
             data: {
-                fullName,
                 email,
+                fullName,    
                 password,
                 department
             },
@@ -81,12 +82,11 @@ export const newhr = async (fullName, email, password, department) => {
 }
 document.querySelector('.form').addEventListener('submit', (e) => {
     e.preventDefault()
-    e.preventDefault()
     const fullName = document.getElementById('fullName').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const department = document.getElementById('department').value;
-
+    console.log("jza")
 
     newhr(fullName, email, password, department)
 
