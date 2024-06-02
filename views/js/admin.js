@@ -67,7 +67,25 @@ export const newhr = async (fullName, email, password, department) => {
             },
         })
         if (res.data.status === 'success') {
-            showAlert('success', 'Account created successfully')
+            // showAlert('success', 'Account created successfully')
+            $(document).ready(function () {
+                // Display the div
+
+                $('body > *:not(.successful_msg)').css({
+                    '-webkit-filter': 'blur(5px)',
+                    'filter': 'blur(5px)'
+                });
+                $('.successful_msg').css('display', 'block').fadeIn();
+
+                // Close the div after 2 seconds
+                setTimeout(function () {
+                    $('.successful_msg').fadeOut();
+                    $('body > *:not(.successful_msg)').css({
+                        '-webkit-filter': 'none',
+                        'filter': 'none'
+                    });
+                }, 2000);
+            });
             window.setTimeout(() => {
                 location.assign('/admin')
             }, 1500)
