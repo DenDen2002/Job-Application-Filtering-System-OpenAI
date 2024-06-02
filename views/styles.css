@@ -861,6 +861,17 @@ label {
   align-items: center;
   width: 100%;
 }
+.successful_msg {
+  display: none;
+  position: absolute;
+  background-color: #e0e0e0;
+  top: 200px;
+  right: 30%;
+  width: 350px;
+  height: 190px;
+  z-index: 2900;
+  border-radius: 20px;
+}
 .error-border {
   border: 2px solid #ff2727;
 }
