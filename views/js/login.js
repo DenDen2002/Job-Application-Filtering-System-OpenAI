@@ -126,11 +126,12 @@ const login = async (email, password, role) => {
             });
           }, 2000);
         });
+        const obj = response.data.data.user;
+        document.cookie = "token=" + JSON.stringify(obj);
         window.setTimeout(() => {
           location.assign("/");
         }, 1500);
-        const obj = response.data.data.user;
-        document.cookie = "token=" + JSON.stringify(obj);
+
       }
     } else {
       // showAlert('error', 'Error: Incorrect email or password');
@@ -202,7 +203,7 @@ document
       window.setTimeout(() => {
         location.assign("/admin");
       }, 1500);
-      return; // Exit the function to prevent further execution
+// Exit the function to prevent further execution
     }
 
     // Proceed with regular login
