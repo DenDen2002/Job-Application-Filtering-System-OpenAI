@@ -5,7 +5,7 @@ const logout = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: 'https://job-application-filtering-system-openai.onrender.com/v1/users/logout',
+            url: 'http://localhost:4001/api/v1/users/logout',
         })
         if (res.data.status === 'success') {
             window.location.href = "/"
@@ -57,7 +57,7 @@ export const newhr = async (fullName, email, password, department) => {
     try {
         const res = await axios({
             method: 'POST',
-            url: 'https://job-application-filtering-system-openai.onrender.com/api/v1/hrs/create',
+            url: 'http://localhost:4001/api/v1/hrs/create',
             data: {
                 fullName,
                 email,

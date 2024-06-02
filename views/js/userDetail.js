@@ -5,7 +5,7 @@ const logout = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: 'https://job-application-filtering-system-openai.onrender.com/api/v1/users/logout',
+            url: 'http://localhost:4001/api/v1/users/logout',
         })
         if (res.data.status === 'success') {
             window.location.href = "/"
@@ -64,7 +64,7 @@ if (obj._id) {
 
 const fetchJobDetails = async (jobId) => {
     try {
-        const res = await axios.get(`https://job-application-filtering-system-openai.onrender.com/api/v1/jobs/${jobId}`);
+        const res = await axios.get(`http://localhost:4001/api/v1/jobs/${jobId}`);
         displayJobDetails(res.data.data);
 
     } catch (err) {
@@ -127,7 +127,7 @@ const apply_btn = async (job,
         $(".display_submit").hide();
         $(".loading_container").show();
 
-        const res = await axios.post('https://job-application-filtering-system-openai.onrender.com/api/v1/apply/create', formData, {
+        const res = await axios.post('http://localhost:4001/api/v1/apply/create', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data' // Set content type to multipart/form-data
             }
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const jobid = urlParams.get('id');
         const userid = obj._id;
 
-        const res = await axios.get('https://job-application-filtering-system-openai.onrender.com/api/v1/apply');
+        const res = await axios.get('http://localhost:4001/api/v1/apply');
         console.log(res.data.data)
         function isEmpty(array) {
             return Array.isArray(array) && array.length === 0;

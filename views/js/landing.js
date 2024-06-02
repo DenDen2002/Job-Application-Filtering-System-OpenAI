@@ -2,7 +2,7 @@ const logout = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: 'https://job-application-filtering-system-openai.onrender.com/api/v1/users/logout',
+            url: 'http://localhost:4001/api/v1/users/logout',
         })
         if (res.data.status === 'success') {
             window.location.href = "/"
@@ -56,7 +56,7 @@ if (obj._id) {
 
 const fetchJobs = async () => {
     try {
-        const res = await axios.get('https://job-application-filtering-system-openai.onrender.com/api/v1/jobs');
+        const res = await axios.get('http://localhost:4001/api/v1/jobs');
         displayJobs(res.data.data);
     } catch (err) {
         console.log(err);
@@ -72,10 +72,10 @@ const displayJobs = (jobs) => {
         jobListItem.classList.add('joblist');
         jobListItem.addEventListener('click', () => {
             if (obj.role == 'hr') {
-                window.location.href = `https://job-application-filtering-system-openai.onrender.com/detail.html?id=${job._id}`;
+                window.location.href = `http://localhost:4001/detail.html?id=${job._id}`;
 
             } else {
-                window.location.href = `https://job-application-filtering-system-openai.onrender.com/userDetail.html?id=${job._id}`;
+                window.location.href = `http://localhost:4001/userDetail.html?id=${job._id}`;
 
             }
 
@@ -116,15 +116,15 @@ const displayJobs = (jobs) => {
 
         const jobLength = document.createElement('div');
         jobLength.classList.add('job-length', 'info');
-        jobLength.innerHTML = `<img src="img/Black.svg" alt=""> &nbsp;${job.employeeType}`; // Assuming job type (e.g., Full time) is available in the job object
+        jobLength.innerHTML = `<img src="img/Black.svg" class="icon" alt=""> &nbsp;${job.employeeType}`; // Assuming job type (e.g., Full time) is available in the job object
 
         const workDepartment = document.createElement('div');
         workDepartment.classList.add('work-department', 'info');
-        workDepartment.innerHTML = `<img src="img/Vector.svg" alt="">&nbsp;${job.department}`; // Assuming department name is available in the job object
+        workDepartment.innerHTML = `<img src="img/Vector.svg" class="icon" alt="">&nbsp;${job.department}`; // Assuming department name is available in the job object
 
         const location = document.createElement('div');
         location.classList.add('location', 'info');
-        location.innerHTML = `<img src="img/pin.svg" alt="">&nbsp;${job.placement}`; // Assuming location is available in the job object
+        location.innerHTML = `<img src="img/pin.svg" class="icon" alt="">&nbsp;${job.placement}`; // Assuming location is available in the job object
 
         jobShortDetail.appendChild(jobLength);
         jobShortDetail.appendChild(workDepartment);

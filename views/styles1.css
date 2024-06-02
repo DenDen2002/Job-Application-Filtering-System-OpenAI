@@ -2,10 +2,10 @@ body {
   background-color: #edeef1;
 }
 .header {
+  padding-left: 21%;
+  padding-right: 21%;
   display: flex;
   align-items: center;
-  padding-left: 150px;
-  padding-right: 150px;
   background-color: white;
   height: 80px;
   border-radius: 0 0 20px 20px;
@@ -13,11 +13,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 76.5%;
-}
-.logo {
-  width: 50%;
-  font-family: "Saira Stencil", sans-serif;
+  width: 58%;
 }
 input:focus {
   outline: none;
@@ -25,7 +21,7 @@ input:focus {
 .login_signup {
   display: flex;
   justify-content: flex-end;
-  width: 50%;
+  width: 80%;
 }
 .login_signup_respon {
   display: none;
@@ -34,9 +30,22 @@ a {
   text-decoration: none;
   color: #686c6f;
 }
+.logo {
+  width: 20%;
+  display: flex;
+  font-family: "Saira Stencil", sans-serif;
+}
+.l2 {
+  padding-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .nav {
+  margin-left: 20px;
   font-weight: 600 !important;
-  font-size: 18px;
+  font-size: 15px;
+  color: #7d7d7d !important;
 }
 .navbar_list {
   height: 20%;
@@ -72,7 +81,7 @@ a {
 }
 .sign {
   border-radius: 25px; /* Adjust the value to make it more or less circular */
-  padding: 10px 20px; /* Adjust padding as needed */
+  padding: 8px 18px; /* Adjust padding as needed */
   background-color: #0161ff; /* Example background color */
   border: none; /* Remove border */
   color: #fafcff;
@@ -91,7 +100,7 @@ a {
 }
 .log {
   border-radius: 25px; /* Adjust the value to make it more or less circular */
-  padding: 10px 20px; /* Adjust padding as needed */
+  padding: 8px 18px; /* Adjust padding as needed */
   background-color: white;
   color: #0161ff;
   border: 1.6px solid #97ccff;
@@ -102,11 +111,7 @@ a {
 .log:hover {
   background-color: #dbedfe;
 }
-.nav {
-  margin-left: 20px;
-  font-size: 14px;
-  font-weight: bold;
-}
+
 .search {
   display: flex;
   height: 45px;
@@ -439,7 +444,6 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
 }
 .display_submit {
   display: none;
@@ -539,13 +543,55 @@ label {
 }
 .respond {
   font-weight: bolder;
-  margin-top: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+@media (max-width: 1670px) {
+  .header {
+    padding-left: 15%;
+    padding-right: 15%;
+    width: 70%;
+  }
+}
+@media (max-width: 1670px) {
+  .header {
+    padding-left: 13%;
+    padding-right: 13%;
+    width: 74%;
+  }
+  .job_types_popup {
+    left: 18%;
+  }
+  .department_types_popup {
+    left: 31%;
+  }
+}
+@media (max-width: 1570px) {
+  .header {
+    padding-left: 11%;
+    padding-right: 11%;
+    width: 78%;
+  }
+}
+@media (max-width: 1470px) {
+  .header {
+    padding-left: 9%;
+    padding-right: 9%;
+    width: 82%;
+  }
+}
+@media (max-width: 1412px) {
+  .header {
+    padding-left: 8%;
+    padding-right: 8%;
+    width: 84%;
+  }
 }
 @media (max-width: 1380px) {
   .header {
-    width: 100%;
-    padding-left: 134px;
-    padding-right: 137px;
+    padding-left: 8%;
+    padding-right: 8%;
+    width: 84%;
   }
   .login_signup {
     width: 90%;
@@ -564,24 +610,19 @@ label {
   }
 }
 @media (max-width: 1280px) {
-  .header {
-    width: 100%;
-    padding-left: 134px;
-    padding-right: 120px;
-  }
   .btn_next1 {
     right: 22% !important;
   }
 }
 @media (max-width: 1180px) {
-  .header {
-    width: 91.37%;
-    padding-left: 110px;
+  .joblistcontent {
+    width: 895px;
   }
-  .login_signup {
-    display: flex;
-    justify-content: flex-end;
-    width: 82.3%;
+  .search {
+    width: 800px;
+  }
+  .joblist {
+    width: 900px;
   }
   .btn_next1 {
     right: 15% !important;
@@ -591,15 +632,6 @@ label {
   }
 }
 @media (max-width: 1080px) {
-  .header {
-    width: 90.37%;
-    padding-left: 100px;
-  }
-  .login_signup {
-    display: flex;
-    justify-content: flex-end;
-    width: 82.3%;
-  }
   .job_filter {
     width: 810px;
     height: 115px;
@@ -613,15 +645,6 @@ label {
   }
 }
 @media (max-width: 1030px) {
-  .header {
-    width: 73% !important;
-    padding-left: 140px;
-  }
-  .login_signup {
-    display: flex;
-    justify-content: flex-end;
-    width: 82.3%;
-  }
   .btn_next1 {
     right: 15% !important;
   }
@@ -649,29 +672,50 @@ label {
 }
 @media (max-width: 980px) {
   .header {
-    display: flex;
-    justify-content: flex-end;
-    width: 99% !important;
-    padding-left: 10px;
-    padding-right: 0px !important;
+    padding-left: 8%;
+    padding-right: 8%;
+    width: 84%;
   }
 }
 @media (max-width: 970px) {
-  .header {
-    display: flex;
-    justify-content: flex-end;
-    width: 99%;
-    padding-left: 10px;
+  .search {
+    height: 48px !important;
+  }
+  .result_container {
+    width: 100% !important;
+  }
+  .detail_content {
+    height: 980px !important;
+  }
+  .short_detail_containers {
+    width: 300px;
+  }
+  .job-short-detail {
+    margin-top: 0px;
+    display: block;
+  }
+  .job-short-detail {
+    align-items: end;
+    justify-content: end;
+    width: 50%;
+  }
+  .image {
+    width: 10%;
+  }
+  .job-titleandagency {
+    width: 40%;
+  }
+  .work-department {
+    margin-top: 10px;
+  }
+  .location {
+    margin-top: 10px;
   }
   .btn_next1 {
     right: 12% !important;
   }
 }
 @media (max-width: 860px) {
-  .header {
-    width: 90% !important;
-    padding-right: 70.9px !important;
-  }
   .display_detail1 {
     left: 8% !important;
   }

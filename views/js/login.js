@@ -1,5 +1,5 @@
 // import axios from 'axios'; // Import axios if not already imported
-import { showAlert } from './alert.js';
+import { showAlert } from "./alert.js";
 
 // const login = async (email, password) => {
 //     console.log("i am here outside")
@@ -67,142 +67,145 @@ import { showAlert } from './alert.js';
 //     login(email, password);
 // })
 
-
-
 // main.js
 const login = async (email, password, role) => {
-    try {
-        let url;
-        if (role === 'hr') {
-            url = 'https://job-application-filtering-system-openai.onrender.com/api/v1/hrs/login';
-        } else {
-            url = 'https://job-application-filtering-system-openai.onrender.com/api/v1/users/login';
-        }
-
-        const response = await axios({
-            method: 'POST',
-            url: url,
-            data: {
-                email,
-                password,
-            },
-        });
-
-        if (response.data.status === 'success') {
-            if (role === 'hr') {
-
-                $(document).ready(function () {
-                    $('body > *:not(.successful_msg)').css({
-                        '-webkit-filter': 'blur(5px)',
-                        'filter': 'blur(5px)'
-                    });
-                    $('.successful_msg').css('display', 'block').fadeIn();
-
-                    // Close the div after 2 seconds
-                    setTimeout(function () {
-                        $('.successful_msg').fadeOut();
-                        $('body > *:not(.successful_msg)').css({
-                            '-webkit-filter': 'none',
-                            'filter': 'none'
-                        });
-                    }, 2000);
-                });
-                window.setTimeout(() => {
-                    location.assign('/hr');
-                }, 1500);
-                const hrObj = response.data.data.user;
-                console.log(response.data.data.user)
-                document.cookie = 'token=' + JSON.stringify(hrObj);
-            } else {
-                $(document).ready(function () {
-                    $('body > *:not(.successful_msg)').css({
-                        '-webkit-filter': 'blur(5px)',
-                        'filter': 'blur(5px)'
-                    });
-                    $('.successful_msg').css('display', 'block').fadeIn();
-
-                    // Close the div after 2 seconds
-                    setTimeout(function () {
-                        $('.successful_msg').fadeOut();
-                        $('body > *:not(.successful_msg)').css({
-                            '-webkit-filter': 'none',
-                            'filter': 'none'
-                        });
-                    }, 2000);
-                });
-                window.setTimeout(() => {
-                    location.assign('/');
-                }, 1500);
-                const obj = response.data.data.user;
-                document.cookie = 'token=' + JSON.stringify(obj);
-            }
-        } else {
-            // showAlert('error', 'Error: Incorrect email or password');
-            $(document).ready(function () {
-                $('body > *:not(.successful_msg)').css({
-                    '-webkit-filter': 'blur(5px)',
-                    'filter': 'blur(5px)'
-                });
-                $('.successful_msg').css('display', 'block').fadeIn();
-
-                // Close the div after 2 seconds
-                setTimeout(function () {
-                    $('.successful_msg').fadeOut();
-                    $('body > *:not(.successful_msg)').css({
-                        '-webkit-filter': 'none',
-                        'filter': 'none'
-                    });
-                }, 2000);
-            });
-        }
-    } catch (err) {
-        console.error(err);
-        // showAlert('error', 'An error occurred. Please try again later.');
-        $(document).ready(function () {
-            $('body > *:not(.unsuccessful_msg)').css({
-                '-webkit-filter': 'blur(5px)',
-                'filter': 'blur(5px)'
-            });
-            $('.unsuccessful_msg').css('display', 'block').fadeIn();
-
-            // Close the div after 2 seconds
-            setTimeout(function () {
-                $('.unsuccessful_msg').fadeOut();
-                $('body > *:not(.unsuccessful_msg)').css({
-                    '-webkit-filter': 'none',
-                    'filter': 'none'
-                });
-            }, 2000);
-        });
+  try {
+    let url;
+    if (role === "hr") {
+      url = "http://localhost:4001/api/v1/hrs/login";
+    } else {
+      url = "http://localhost:4001/api/v1/users/login";
     }
+
+    const response = await axios({
+      method: "POST",
+      url: url,
+      data: {
+        email,
+        password,
+      },
+    });
+
+    if (response.data.status === "success") {
+      if (role === "hr") {
+        $(document).ready(function () {
+          $("body > *:not(.successful_msg)").css({
+            "-webkit-filter": "blur(5px)",
+            filter: "blur(5px)",
+          });
+          $(".successful_msg").css("display", "block").fadeIn();
+
+          // Close the div after 2 seconds
+          setTimeout(function () {
+            $(".successful_msg").fadeOut();
+            $("body > *:not(.successful_msg)").css({
+              "-webkit-filter": "none",
+              filter: "none",
+            });
+          }, 2000);
+        });
+        window.setTimeout(() => {
+          location.assign("/hr");
+        }, 1500);
+        const hrObj = response.data.data.user;
+        console.log(response.data.data.user);
+        document.cookie = "token=" + JSON.stringify(hrObj);
+      } else {
+        $(document).ready(function () {
+          $("body > *:not(.successful_msg)").css({
+            "-webkit-filter": "blur(5px)",
+            filter: "blur(5px)",
+          });
+          $(".successful_msg").css("display", "block").fadeIn();
+
+          // Close the div after 2 seconds
+          setTimeout(function () {
+            $(".successful_msg").fadeOut();
+            $("body > *:not(.successful_msg)").css({
+              "-webkit-filter": "none",
+              filter: "none",
+            });
+          }, 2000);
+        });
+        window.setTimeout(() => {
+          location.assign("/");
+        }, 1500);
+        const obj = response.data.data.user;
+        document.cookie = "token=" + JSON.stringify(obj);
+      }
+    } else {
+      // showAlert('error', 'Error: Incorrect email or password');
+      $(document).ready(function () {
+        $("body > *:not(.successful_msg)").css({
+          "-webkit-filter": "blur(5px)",
+          filter: "blur(5px)",
+        });
+        $(".successful_msg").css("display", "block").fadeIn();
+
+        // Close the div after 2 seconds
+        setTimeout(function () {
+          $(".successful_msg").fadeOut();
+          $("body > *:not(.successful_msg)").css({
+            "-webkit-filter": "none",
+            filter: "none",
+          });
+        }, 2000);
+      });
+    }
+  } catch (err) {
+    console.error(err);
+    // showAlert('error', 'An error occurred. Please try again later.');
+    $(document).ready(function () {
+      $("body > *:not(.unsuccessful_msg)").css({
+        "-webkit-filter": "blur(5px)",
+        filter: "blur(5px)",
+      });
+      $(".unsuccessful_msg").css("display", "block").fadeIn();
+
+      // Close the div after 2 seconds
+      setTimeout(function () {
+        $(".unsuccessful_msg").fadeOut();
+        $("body > *:not(.unsuccessful_msg)").css({
+          "-webkit-filter": "none",
+          filter: "none",
+        });
+      }, 2000);
+    });
+  }
 };
 
-document.querySelector('.input_container_form').addEventListener('submit', (e) => {
+document
+  .querySelector(".input_container_form")
+  .addEventListener("submit", (e) => {
     e.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const role = document.getElementById('role').value
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const role = document.getElementById("role").value;
     login(email, password, role);
 
     // Check if the provided credentials match the admin credentials
-    if (role == 'admin' && email === 'ksangay214@gmail.com' && password === '123Pass123word') {
-        // Admin login mmmmv
-        // showAlert('success', 'Logged in as Admin');
-        $(document).ready(function () {
-            // Display the div
-            $('.successful_msg').css('display', 'block').fadeIn();
+    if (
+      role == "admin" &&
+      email === "ksangay214@gmail.com" &&
+      password === "123Pass123word"
+    ) {
+      // Admin login mmmmv
+      // showAlert('success', 'Logged in as Admin');
+      $(document).ready(function () {
+        // Display the div
+        $(".successful_msg").css("display", "block").fadeIn();
 
-            // Close the div after 2 seconds
-            setTimeout(function () {
-                $('.successful_msg').fadeOut();
-            }, 2000);
-        });
-        window.setTimeout(() => {
-            location.assign('/admin');
-        }, 1500);
-        return; // Exit the function to prevent further execution
+        // Close the div after 2 seconds
+        setTimeout(function () {
+          $(".successful_msg").fadeOut();
+        }, 2000);
+      });
+      window.setTimeout(() => {
+        location.assign("/admin");
+      }, 1500);
+      return; // Exit the function to prevent further execution
     }
 
     // Proceed with regular login
     login(email, password, role);
-});
+  });

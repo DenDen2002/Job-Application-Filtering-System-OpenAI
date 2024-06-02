@@ -95,7 +95,6 @@ body {
 
 .main {
   z-index: -1000;
-  margin-top: 200px;
   background-color: #f7f7f7;
   padding: 8rem 6rem;
   -webkit-box-flex: 1;
@@ -849,7 +848,7 @@ body {
 }
 
 .user-view__menu {
-  -webkit-box-flex: 32rem;
+  -webkit-box-flex: 25rem;
   -ms-flex: 32rem 0 0px;
   flex: 32rem 0 0;
   background-image: -webkit-gradient(
@@ -878,7 +877,7 @@ body {
 
 .footer {
   background-color: #f7f7f7;
-  padding: 6rem 4rem 3rem 4rem;
+  padding: 3rem 3rem 3rem 4rem;
   font-size: 1.4rem;
   display: grid;
   grid-template-columns: auto auto;

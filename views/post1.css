@@ -1,13 +1,6 @@
 body {
   font-family: "Mulish", sans-serif;
 }
-.header {
-  width: 79.8%;
-}
-.nav {
-  font-weight: 600 !important;
-  font-size: 18px;
-}
 .user_id {
   display: none;
 }
@@ -32,7 +25,7 @@ body {
   background-color: #ffffff;
   width: 650px;
   height: 450px;
-  left: 25%;
+  left: 32%;
   z-index: -100;
   border-radius: 20px;
 }
@@ -44,7 +37,7 @@ body {
   background-color: #ffffff;
   width: 650px;
   height: 450px;
-  left: 25%;
+  left: 32%;
   z-index: -100;
   border-radius: 20px;
 }
@@ -56,7 +49,7 @@ body {
   background-color: #ffffff;
   width: 650px;
   height: 450px;
-  left: 25%;
+  left: 32%;
   z-index: -100;
   border-radius: 20px;
 }
@@ -67,8 +60,8 @@ body {
   top: 200px;
   background-color: #ffffff;
   width: 650px;
-  height: 450px;
-  left: 25%;
+  height: 490px;
+  left: 32%;
   z-index: -100;
   border-radius: 20px;
 }
@@ -80,7 +73,7 @@ body {
   background-color: #ffffff;
   width: 650px;
   height: 450px;
-  left: 25%;
+  left: 32%;
   z-index: -100;
   border-radius: 20px;
 }
@@ -242,7 +235,7 @@ input {
   border-radius: 25px;
   border: none;
   position: absolute;
-  right: 414px;
+  right: 32%;
   top: 770px;
   background-color: #0161ff;
   color: #ffffff;
@@ -254,7 +247,7 @@ input {
   border-radius: 25px;
   border: none;
   position: absolute;
-  left: 380px;
+  left: 32%;
   top: 770px;
   background-color: transparent;
   border: 1px solid #4a3aff;
@@ -270,7 +263,7 @@ input {
   border-radius: 25px;
   border: none;
   position: absolute;
-  left: 330px;
+  left: 32%;
   top: 770px;
   background-color: transparent;
   border: 1px solid #4a3aff;
@@ -337,7 +330,9 @@ input {
   justify-content: center;
 }
 .date_input {
-  width: 520px;
+  width: 480px;
+  padding-left: 20px;
+  padding-right: 20px;
   color: #6f6c90;
   font-family: "Mulish", sans-serif;
 }
@@ -350,6 +345,8 @@ input {
   color: #ffffff;
 }
 .job_descript_input1 {
+  margin: 10px;
+  padding: 2px;
   border: 1px solid #eff0f6;
   height: 30px;
   border-radius: 25px;
