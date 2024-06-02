@@ -109,7 +109,7 @@ const login = async (email, password, role) => {
         }, 1500);
         const hrObj = response.data.data.user;
         document.cookie = "token=" + JSON.stringify(hrObj);
-      } else {
+      } else if(role==="regular") {
         $(document).ready(function () {
           $("body > *:not(.successful_msg)").css({
             "-webkit-filter": "blur(5px)",
@@ -130,6 +130,30 @@ const login = async (email, password, role) => {
         document.cookie = "token=" + JSON.stringify(obj);
         window.setTimeout(() => {
           location.assign("/");
+        }, 1500);
+
+      }
+      else{
+        $(document).ready(function () {
+          $("body > *:not(.successful_msg)").css({
+            "-webkit-filter": "blur(5px)",
+            filter: "blur(5px)",
+          });
+          $(".successful_msg").css("display", "block").fadeIn();
+
+          // Close the div after 2 seconds
+          setTimeout(function () {
+            $(".successful_msg").fadeOut();
+            $("body > *:not(.successful_msg)").css({
+              "-webkit-filter": "none",
+              filter: "none",
+            });
+          }, 2000);
+        });
+        const obj = response.data.data.user;
+        document.cookie = "token=" + JSON.stringify(obj);
+        window.setTimeout(() => {
+          location.assign("/admin");
         }, 1500);
 
       }
@@ -181,31 +205,5 @@ document
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const role = document.getElementById("role").value;
-    login(email, password, role);
-
-    // Check if the provided credentials match the admin credentials
-    if (
-      role == "admin" &&
-      email === "ksangay214@gmail.com" &&
-      password === "123Pass123word"
-    ) {
-      // Admin login mmmmv
-      // showAlert('success', 'Logged in as Admin');
-      $(document).ready(function () {
-        // Display the div
-        $(".successful_msg").css("display", "block").fadeIn();
-
-        // Close the div after 2 seconds
-        setTimeout(function () {
-          $(".successful_msg").fadeOut();
-        }, 2000);
-      });
-      window.setTimeout(() => {
-        location.assign("/admin");
-      }, 1500);
-// Exit the function to prevent further execution
-    }
-
-    // Proceed with regular login
     login(email, password, role);
   });
