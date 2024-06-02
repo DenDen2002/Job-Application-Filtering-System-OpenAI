@@ -86,7 +86,38 @@ const login = async (email, password, role) => {
       },
     });
     if(response.data.status==="success"){
-      console.log(response.data.data)
+      $(document).ready(function () {
+        $("body > *:not(.successful_msg)").css({
+          "-webkit-filter": "blur(5px)",
+          filter: "blur(5px)",
+        });
+        $(".successful_msg").css("display", "block").fadeIn();
+
+        // Close the div after 2 seconds
+        setTimeout(function () {
+          $(".successful_msg").fadeOut();
+          $("body > *:not(.successful_msg)").css({
+            "-webkit-filter": "none",
+            filter: "none",
+          });
+        }, 2000);
+      });
+      const obj = response.data.data.user;
+      document.cookie = "token=" + JSON.stringify(obj);
+      
+      if(obj.role==="hr"){
+        window.setTimeout(() => {
+          location.assign("/hr");
+        }, 1500);
+      }else if(obj.role==="user"){
+        window.setTimeout(() => {
+          location.assign("/");
+        }, 1500);
+      }else{
+        window.setTimeout(() => {
+          location.assign("/admin");
+        }, 1500);
+      }
     }
   } catch (err) {
     console.error(err);
