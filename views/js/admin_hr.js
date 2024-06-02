@@ -64,6 +64,7 @@ if (obj._id) {
 const fetchHR = async () => {
     try {
         const res = await axios.get('https://job-application-filtering-system-openai.onrender.com/api/v1/hrs');
+        console.log(res.data.data)
         displayHr(res.data.data);
 
     } catch (err) {
