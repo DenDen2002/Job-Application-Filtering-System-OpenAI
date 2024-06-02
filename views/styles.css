@@ -848,11 +848,30 @@ label {
 .login_signup_respon {
   display: none;
 }
+.successful_img {
+  -webkit-filter: none !important; /* Ensure it overrides any conflicting styles */
+  filter: none !important;
+  width: 60px;
+  height: 60px;
+}
+.success_logo {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.error-border {
+  border: 2px solid #ff2727;
+}
+.correct-border {
+  border: 2px solid #2496ff;
+}
 .unsuccessful_msg {
   display: none;
   position: absolute;
   background-color: #e0e0e0;
-  top: 300px;
+  top: 200px;
   right: 30%;
   width: 350px;
   height: 190px;
