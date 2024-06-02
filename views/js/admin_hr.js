@@ -5,7 +5,7 @@ const logout = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: 'http://localhost:4001/api/v1/users/logout',
+            url: 'https://job-application-filtering-system-openai.onrender.com/api/v1/users/logout',
         })
         if (res.data.status === 'success') {
             window.location.href = "/"
@@ -63,7 +63,7 @@ if (obj._id) {
 
 const fetchHR = async () => {
     try {
-        const res = await axios.get('http://localhost:4001/api/v1/hrs');
+        const res = await axios.get('https://job-application-filtering-system-openai.onrender.com/api/v1/hrs');
         displayHr(res.data.data);
 
     } catch (err) {
@@ -93,7 +93,7 @@ const displayHr = (hr) => {
         deleteCell.textContent = 'Delete';
         deleteCell.addEventListener('click', async () => {
             try {
-                await axios.delete(`http://localhost:4001/api/v1/hrs/${hr._id}`);
+                await axios.delete(`https://job-application-filtering-system-openai.onrender.com/api/v1/hrs/${hr._id}`);
                 tableRow.remove();
                 location.reload(true)
             } catch (err) {
@@ -116,7 +116,7 @@ fetchHR();
 
 const fetchCount = async () => {
     try {
-        const res = await axios.get('http://localhost:4001/api/v1/hrs/count')
+        const res = await axios.get('https://job-application-filtering-system-openai.onrender.com/api/v1/hrs/count')
         displayUsercount(res.data.data)
     } catch (err) {
         console.log(err);

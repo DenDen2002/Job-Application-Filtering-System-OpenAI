@@ -3,7 +3,7 @@ const logout = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: 'http://localhost:4001/api/v1/users/logout',
+            url: 'https://job-application-filtering-system-openai.onrender.com/api/v1/users/logout',
         })
         if (res.data.status === 'success') {
             window.location.href = "/"
@@ -106,7 +106,7 @@ if (obj._id) {
 // }
 const newjob = async (jobTitle, department, employeeType, positionTitle, field, slots, qualification, placement, salaryRange, jobDescription, vacancyEndDate, postedBy) => {
     try {
-        const res = await axios.post('http://localhost:4001/api/v1/jobs/create', {
+        const res = await axios.post('https://job-application-filtering-system-openai.onrender.com/api/v1/jobs/create', {
             jobTitle,
             department,
             employeeType,

@@ -5,7 +5,7 @@ const logout = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: 'http://localhost:4001/api/v1/users/logout',
+            url: 'https://job-application-filtering-system-openai.onrender.com/api/v1/users/logout',
         })
         if (res.data.status === 'success') {
             window.location.href = "/"
@@ -50,7 +50,7 @@ if (obj._id) {
 
 const fetchJobDetails = async (jobId) => {
     try {
-        const res = await axios.get(`http://localhost:4001/api/v1/jobs/${jobId}`);
+        const res = await axios.get(`https://job-application-filtering-system-openai.onrender.com/api/v1/jobs/${jobId}`);
         // displayJobDetails(res.data.data);
 
         console.log(res.data)
@@ -114,7 +114,7 @@ const displayJobDetails = (job) => {
     const delete_btn = document.getElementById('delete-btn');
     delete_btn.addEventListener('click', async () => {
         try {
-            const res = await axios.delete(`http://localhost:4001/api/v1/jobs/${job._id}`);
+            const res = await axios.delete(`https://job-application-filtering-system-openai.onrender.com/api/v1/jobs/${job._id}`);
             if (res.data.status === 'success') {
                 window.setTimeout(() => {
                     location.assign('/hr'); // Redirect to the login page after successful registration

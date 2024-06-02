@@ -83,8 +83,8 @@ export const updateSettings = async (data, type) => {
         if (obj.role == "hr") {
             const url =
                 type === 'password'
-                    ? 'http://localhost:4001/api/v1/hrs/updateMyPassword'
-                    : 'http://localhost:4001/api/v1/hrs/updateMe'
+                    ? 'https://job-application-filtering-system-openai.onrender.com/api/v1/hrs/updateMyPassword'
+                    : 'https://job-application-filtering-system-openai.onrender.com/api/v1/hrs/updateMe'
             const res = await axios({
                 method: 'PATCH',
                 url,
@@ -98,8 +98,8 @@ export const updateSettings = async (data, type) => {
         } else {
             const url =
                 type === 'password'
-                    ? 'http://localhost:4001/api/v1/users/updateMyPassword'
-                    : 'http://localhost:4001/api/v1/users/updateMe'
+                    ? 'https://job-application-filtering-system-openai.onrender.com/api/v1/users/updateMyPassword'
+                    : 'https://job-application-filtering-system-openai.onrender.com/api/v1/users/updateMe'
             const res = await axios({
                 method: 'PATCH',
                 url,

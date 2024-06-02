@@ -4,7 +4,7 @@ const register = async (fullName, email, password) => {
     try {
         const res = await axios({
             method: 'POST',
-            url: 'http://localhost:4001/api/v1/users/signup', // Update the URL to your backend API endpoint
+            url: 'https://job-application-filtering-system-openai.onrender.comapi/v1/users/signup', // Update the URL to your backend API endpoint
             data: {
                 fullName,
                 email,
