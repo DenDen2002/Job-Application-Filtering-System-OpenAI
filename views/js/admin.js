@@ -45,7 +45,7 @@ if (obj._id) {
     el2.innerHTML =
         '<div class="signup_btn nav"><a href="/admin">Add HR</a></div><div class="signup_btn nav"><a href="/admin_hr">HRs</a></div><div class="signup_btn nav"><a href="/admin_user">Applicants</a></div><div class="signup_btn"><a class="sign">' +
         obj.fullName +
-        '</a></div><div class="login_btn"><a id="logout" class="Log">log Out</a></div> '
+        '</a></div><div class="login_btn"><a id="logout1" class="Log">log Out</a></div> '
     var doc1 = document.querySelector('#logout1')
 
     doc1.addEventListener('click', (e) => logout())
