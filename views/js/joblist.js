@@ -2,7 +2,7 @@ const logout = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: 'http://localhost:4001/api/v1/users/logout',
+            url: 'https://job-application-filtering-system-openai.onrender.com/api/v1/users/logout',
         })
         if (res.data.status === 'success') {
             window.location.href = "/"
@@ -171,7 +171,6 @@ if (obj._id) {
 const fetchAllJobs = async () => {
     try {
         const res = await axios.get('https://job-application-filtering-system-openai.onrender.com/api/v1/jobs');
-        console.log(res.data.data)
         const jobs = res.data.data;
         // const postedByArray = [];
         // console.log(postedByArray)
@@ -194,7 +193,6 @@ const fetchAllJobs = async () => {
 
 const displayAllJobs = (jobs) => {
 
-    console.log(obj.role)
     const jobListContainer = document.querySelector('.job');
     jobs.forEach((job) => {
         const jobListItem = document.createElement('div');

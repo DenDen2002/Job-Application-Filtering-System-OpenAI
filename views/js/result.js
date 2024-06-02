@@ -38,7 +38,7 @@ if (obj._id) {
 const userApllication = async () => {
   try {
     const res = await axios.get("https://job-application-filtering-system-openai.onrender.com/api/v1/apply");
-    console.log(res.data.data);
+
     // displayApplications(res.data.data);
   } catch (err) {
     console.log(err);
@@ -51,7 +51,7 @@ const displayData = (apply) => {
 
   for (let i = 0; i < apply.length; i++) {
     const parsedData = JSON.parse(arr[i].parsedData);
-    console.log(parsedData);
+    
 
     var tableRow = document.createElement("tr");
 
@@ -130,7 +130,7 @@ const fetchAndDisplayApplications = async () => {
       return relevanceB - relevanceA;
     });
     displayData(sortedData);
-    console.log(res.data.data);
+
   } catch (err) {
     console.log(err);
   }
@@ -141,15 +141,14 @@ fetchAndDisplayApplications();
 
 // Helper function to display the parsed data in the modal
 const displayParsedData = (parsedData) => {
-  console.log(parsedData);
-  console.log(parsedData.college);
+
   const modalContent = document.getElementById("profile");
   modalContent.innerHTML = `
         <p><strong>Name:</strong> ${parsedData.profile.name}</p>
         <p><strong>Email:</strong> ${parsedData.profile.email}</p>`;
 };
 const displayCollegeParsedData = (parsedData) => {
-  console.log(parsedData);
+
   const college = document.getElementById("college");
   college.innerHTML = `
         <p><strong>College Name:</strong> ${parsedData.college.name}</p>
@@ -159,7 +158,6 @@ const displayCollegeParsedData = (parsedData) => {
         <p><strong>Start Date:</strong> ${parsedData.college.start_date}</p>`;
 };
 const score = (parsedData) => {
-  console.log(parsedData);
   const college = document.getElementById("relevance");
   college.innerHTML = `
         <p><strong> relevance: </strong> ${parsedData.relevance}</p>
@@ -167,7 +165,6 @@ const score = (parsedData) => {
 };
 
 const project = (parsedData) => {
-  console.log(parsedData);
   const project = parsedData.projects;
   project.forEach((project) => {
     // Create a container for each project
@@ -212,7 +209,7 @@ const project = (parsedData) => {
 };
 
 const experince = (parsedData) => {
-  console.log(parsedData);
+
   const project = parsedData.professional_experiences;
   project.forEach((project) => {
     // Create a container for each project

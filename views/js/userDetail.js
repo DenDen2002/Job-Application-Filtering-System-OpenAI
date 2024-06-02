@@ -152,12 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const userid = obj._id;
 
         const res = await axios.get('https://job-application-filtering-system-openai.onrender.com/api/v1/apply');
-        console.log(res.data.data)
+       
         function isEmpty(array) {
             return Array.isArray(array) && array.length === 0;
         }
         const jobApp = res.data.data;
-        console.log(jobApp)
+
         if (isEmpty(jobApp)) {
             const user = document.getElementById('userId').value = userid;
             const job = document.getElementById('jobId').value = jobid;
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             jobApp.forEach(jobs => {
                 // postedByArray.push(job.postedBy);
-                console.log(jobs.user)
+                
 
                 if (jobs.user === userid && jobs.job === jobId) {
                     // result.push(jobs)

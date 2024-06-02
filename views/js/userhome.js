@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fullName = getFullName(); // Function to retrieve user's full name from cookie or local storage
     const usernameElement = document.querySelector('.username');
     const logoutButton = document.querySelector('.log');
-    console.log(fullName)
+    
     if (fullName) {
         // If full name exists, display it and show the logout button
         document.querySelector('.signup_btn .username').textContent = fullName;
@@ -97,7 +97,7 @@ function getFullName() {
 
 const fetchJobs = async () => {
     try {
-        const res = await axios.get('http://localhost:4001/api/v1/jobs');
+        const res = await axios.get('https://job-application-filtering-system-openai.onrender.com/api/v1/jobs');
         displayJobs(res.data.data);
     } catch (err) {
         console.log(err);

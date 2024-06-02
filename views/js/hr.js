@@ -41,7 +41,6 @@ if (obj._id) {
 const fetchJobs = async () => {
     try {
         const res = await axios.get('https://job-application-filtering-system-openai.onrender.com/api/v1/jobs');
-        console.log(res.data.data)
         displayJobs(res.data.data);
     } catch (err) {
         console.log(err);
@@ -50,7 +49,6 @@ const fetchJobs = async () => {
 
 const displayJobs = (jobs) => {
 
-    console.log(obj.role)
     const jobListContainer = document.querySelector('.job');
     jobs.forEach((job) => {
         const jobListItem = document.createElement('div');

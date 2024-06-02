@@ -134,12 +134,12 @@ const newjob = async (jobTitle, department, employeeType, positionTitle, field, 
         showAlert('error', 'Error posting job!', message);
     }
 };
-// console.log("hi")
+
 // Event listener for form submission
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('submit_btn').addEventListener('click', async (e) => {
         e.preventDefault();
-        console.log("Hi");
+       
 
         // Get form data
         const jobTitle = document.getElementById('JobTitle').value;
@@ -154,21 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const jobDescription = document.getElementById('jobDescription').value;
         const vacancyEndDate = document.getElementById('vacancyEndDate').value;
         const postedBy = document.getElementById('hr_id').value = obj._id;
-
-        console.log(JobTitle);
-        console.log(department);
-        console.log(employeeType);
-        console.log(positionTitle);
-
-        console.log(field);
-        console.log(slots);
-        console.log(qualification);
-        console.log(placement);
-
-        console.log(salaryRange);
-        console.log(jobDescription);
-        console.log(vacancyEndDate);
-        console.log(postedBy);
 
         $(".job_postconfirm").show();
         $(document).ready(function () {

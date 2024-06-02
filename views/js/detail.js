@@ -53,8 +53,6 @@ const fetchJobDetails = async (jobId) => {
         const res = await axios.get(`https://job-application-filtering-system-openai.onrender.com/api/v1/jobs/${jobId}`);
         // displayJobDetails(res.data.data);
 
-        console.log(res.data)
-        console.log(res.data.data.postedBy)
         if (res.data.data.postedBy === obj._id) {
             document.querySelector('.delete-btn').style.display = 'inline-block';
             document.querySelector('.Result').style.display = 'inline-block';
@@ -105,7 +103,7 @@ const displayJobDetails = (job) => {
     const result = document.getElementById('result-btn');
     result.addEventListener('click', async () => {
         try {
-            window.location.href = `http://localhost:4001/result.html?id=${job._id}`;
+            window.location.href = `https://job-application-filtering-system-openai.onrender.com/result.html?id=${job._id}`;
         } catch (err) {
             console.log(err);
         }

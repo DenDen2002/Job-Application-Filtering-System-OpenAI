@@ -11,7 +11,7 @@ const register = async (fullName, email, password) => {
                 password
             },
         });
-        console.log(res.data.status)
+       
 
         if (res.data.status === 'success') {
             // showAlert('success', 'Account created successfully');
@@ -117,8 +117,7 @@ $(document).ready(function () {
         var password = document.getElementById('password').value;
         var confirmPassword = document.getElementById('confirm_password').value;
 
-        console.log(password)
-        console.log(confirmPassword)
+  
         if (password !== confirmPassword) {
             $('.confirm_password_input').addClass('error-border');
         } else {

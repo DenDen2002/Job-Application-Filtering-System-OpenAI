@@ -15,7 +15,6 @@ const logout = async () => {
 var obj
 if (document.cookie) {
     obj = JSON.parse(document.cookie.substring(6))
-    console.log(obj)
 } else {
     obj = JSON.parse('{}')
 }
@@ -23,7 +22,6 @@ if (document.cookie) {
 var el = document.querySelector('.header .login_signup')
 if (obj._id) {
     var firstName = obj.fullName.split(' ')[0];
-    console.log(firstName)
     el.innerHTML =
         '<div class="signup_btn nav"><a href ="/">Home</a></div><div class="signup_btn"><a href="/me" class="sign">' +
         firstName +

@@ -83,13 +83,9 @@ document.querySelector('.form').addEventListener('submit', (e) => {
     e.preventDefault()
     e.preventDefault()
     const fullName = document.getElementById('fullName').value;
-    console.log('username', fullName)
     const email = document.getElementById('email').value;
-    console.log('email', email)
     const password = document.getElementById('password').value;
-    console.log('password', password)
     const department = document.getElementById('department').value;
-    console.log('department', department)
 
 
     newhr(fullName, email, password, department)

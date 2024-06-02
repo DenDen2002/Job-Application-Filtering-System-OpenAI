@@ -37,19 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
 function getFullName() {
     // Retrieve all cookies
     const cookies = document.cookie.split(';');
-    console.log(cookies)
 
     // Loop through each cookie to find the one containing the full name
     for (let cookie of cookies) {
         // Trim any leading or trailing whitespace from the cookie string
         cookie = cookie.trim();
-        console.log(cookie)
         const tokenObject = JSON.parse(cookie.substring(6));
 
         // Extract the fullName property from the token object
         const fullName = tokenObject.fullName;
 
-        console.log(fullName)
         return fullName;
 
         // Check if the cookie contains the full name
@@ -69,7 +66,6 @@ const fetchJobDetails = async (jobId) => {
     try {
         const res = await axios.get(`https://job-application-filtering-system-openai.onrender.com/api/v1/jobs/${jobId}`);
         displayJobDetails(res.data.data);
-        console.log(res.data.data)
     } catch (err) {
         console.error('Error fetching job details:', err);
         // Handle the error, such as displaying an error message to the user

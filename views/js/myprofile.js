@@ -3,7 +3,7 @@ const logout = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: 'http://localhost:4001/api/v1/users/logout',
+            url: 'https://job-application-filtering-system-openai.onrender.com/api/v1/users/logout',
         })
         if (res.data.status === 'success') {
             window.location.href = "/"
@@ -90,7 +90,6 @@ export const updateSettings = async (data, type) => {
                 url,
                 data,
             })
-            console.log(res.data.status)
             if (res.data.status === 'success') {
                 showAlert('success', 'Data updated successfully!')
             }
@@ -105,7 +104,6 @@ export const updateSettings = async (data, type) => {
                 url,
                 data,
             })
-            console.log(res.data.status)
             if (res.data.status === 'success') {
                 showAlert('success', 'Data updated successfully!')
             }
@@ -130,7 +128,6 @@ userDataForm.addEventListener('submit', (e) => {
     form.append('fullName', document.getElementById('fullName').value)
     form.append('email', document.getElementById('email').value)
     form.append('userId', obj._id)
-    console.log(form)
     updateSettings(form, 'data')
 })
 

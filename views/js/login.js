@@ -108,7 +108,6 @@ const login = async (email, password, role) => {
           location.assign("/hr");
         }, 1500);
         const hrObj = response.data.data.user;
-        console.log(response.data.data.user);
         document.cookie = "token=" + JSON.stringify(hrObj);
       } else {
         $(document).ready(function () {
